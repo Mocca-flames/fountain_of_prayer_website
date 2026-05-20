@@ -1,0 +1,236 @@
+╔══════════════════════════════════════════════════════════════════════════════╗
+║      FOUNTAIN OF PRAYER MINISTRIES — WEBSITE INSTRUCTIONS                   ║
+║      Read this before making any changes or going live.                      ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+
+FILE OVERVIEW
+─────────────
+  index.html       Main page structure. Only add/remove sections here.
+  css/style.css    All visual styling. Edit colours, fonts, spacing here.
+  js/main.js       UI behaviour (nav toggle, scroll animations). No copy here.
+  js/content.js    Reads content.json and fills the page. No copy here.
+  content.json     ★ ALL TEXT LIVES HERE. Edit copy in this file only.
+  INSTRUCTIONS.txt This file.
+
+
+══════════════════════════════════════════════════════════════════════════════
+SECTION 1 — MISSING INFORMATION (fill in content.json)
+══════════════════════════════════════════════════════════════════════════════
+
+1. EMAIL ADDRESS
+   ─────────────
+   Field: content.json → church.email
+   Replace: "ADD_YOUR_EMAIL@domain.com"
+   Example: "fountainofprayer@gmail.com"
+
+2. TUESDAY SERVICE START TIME
+   ────────────────────────────
+   Field: content.json → services.inPerson.items[1].time
+   Replace: "ADD_TUESDAY_START_TIME"
+   Example: "5:00 PM"
+
+3. SUNDAY SERVICE TIME (confirm or adjust)
+   ─────────────────────────────────────────
+   Currently set to "09:00 AM" in content.json.
+   Field: content.json → services.inPerson.items[0].time
+
+4. FACEBOOK PAGE URL
+   ──────────────────
+   Field: content.json → church.facebookUrl
+          AND in index.html search for "ADD_YOUR_FACEBOOK_PAGE"
+   Replace with your actual Facebook page URL.
+   Example: "https://www.facebook.com/FountainOfPrayerHammanskraal"
+
+5. FOUNDING YEAR (optional)
+   ──────────────────────────
+   Field: content.json → about.founded
+   Replace "ADD_FOUNDING_YEAR" or delete the key entirely if unused.
+   Example: "2010"
+
+6. CONGREGATION SIZE (optional)
+   ───────────────────────────────
+   Field: content.json → about.members
+   Replace "ADD_CONGREGATION_SIZE_OR_REMOVE" or delete the key if unused.
+
+7. GOOGLE REVIEW LINK
+   ────────────────────
+   In index.html, find: href="https://g.page/r/ADD_YOUR_GOOGLE_REVIEW_LINK"
+   Replace with your Google Business review link.
+   How to get it:
+     1. Go to Google Maps → search your church name
+     2. Click on your listing → click "Get more reviews"
+     3. Copy the short URL provided
+
+
+══════════════════════════════════════════════════════════════════════════════
+SECTION 2 — IMAGES & ICONS NEEDED
+══════════════════════════════════════════════════════════════════════════════
+
+All image <img> tags in index.html are commented out. Uncomment them and
+place your image files in the /images/ folder.
+
+── IMAGE 1: LOGO ──────────────────────────────────────────────────────────
+  Purpose:      Replace the text logo in the header with your church logo.
+  In index.html look for the comment: "TODO: Replace text logo"
+  How to use:
+    Uncomment: <img src="./images/logo.png" alt="Fountain of Prayer Ministries" />
+    Place file: images/logo.png
+  Recommended: PNG with transparent background, ~240×60px, white/gold version.
+  
+  WHERE TO GET IT:
+    • If you have a logo image already, crop and save as PNG.
+    • Use Canva (canva.com) to design a simple logo — it's free.
+    • Or leave the text logo as-is (it looks clean already).
+
+── IMAGE 2: HERO PHOTO ────────────────────────────────────────────────────
+  Purpose:      Large image shown on the right side of the hero (desktop only).
+  In index.html look for the comment: "TODO: Add a photo of your church"
+  How to use:
+    Uncomment: <img src="./images/hero-photo.jpg" ... />
+    Place file: images/hero-photo.jpg
+  Recommended: 800×1000px portrait (taller than wide), vibrant, high contrast.
+  Ideas:
+    • Prophet Prince Thunder preaching or praying
+    • A congregation worship moment
+    • The exterior or interior of your church building
+  TIP: Even a good smartphone photo works well if well-lit.
+
+── IMAGE 3: ABOUT SECTION PHOTO ───────────────────────────────────────────
+  Purpose:      Shown alongside the "Our Community" / About text.
+  In index.html look for the comment: "TODO: Add a community/ministry photo"
+  How to use:
+    Uncomment: <img src="./images/about-ministry.jpg" ... />
+    Place file: images/about-ministry.jpg
+  Recommended: 800×600px landscape, showing community/congregation/outreach.
+
+── IMAGE 4: FAVICON ───────────────────────────────────────────────────────
+  Purpose:      The small icon shown in the browser tab.
+  In index.html look for: <!-- <link rel="icon" href="./images/favicon.ico" /> -->
+  How to use:
+    Uncomment it and place: images/favicon.ico  (or favicon.png)
+  WHERE TO GET IT:
+    • Generate free at: https://favicon.io
+    • Use your logo or a cross/flame symbol.
+
+── IMAGE 5: OG IMAGE (Social sharing preview) ─────────────────────────────
+  Purpose:      Image shown when someone shares your site on WhatsApp, Facebook, etc.
+  In index.html look for: <!-- <meta property="og:image" ... /> -->
+  How to use:
+    Uncomment and set: <meta property="og:image" content="./images/og-image.jpg" />
+    Place file: images/og-image.jpg
+  Recommended: 1200×630px, bold text overlay with church name + tagline.
+  WHERE TO GET IT:
+    • Design on Canva with a worship background image + your church name text.
+
+── ICON FONT (optional upgrade) ────────────────────────────────────────────
+  The site uses inline SVG icons and emoji (📞 📍 ✉️ 📻) right now.
+  If you want to upgrade to a proper icon font, add this to <head> in index.html:
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  Then replace emoji in HTML with e.g. <i class="fas fa-phone"></i>
+
+
+══════════════════════════════════════════════════════════════════════════════
+SECTION 3 — GOOGLE MAPS EMBED
+══════════════════════════════════════════════════════════════════════════════
+
+Currently the map section shows a placeholder.
+To add a real interactive Google Map:
+
+  1. Go to https://www.google.com/maps
+  2. Search: "Harry Gwala Ave, Kanana, Hammanskraal, 0407"
+  3. Confirm it finds the right location. If not, pin your location manually.
+  4. Click "Share" → "Embed a map" → choose size "Large"
+  5. Copy the entire <iframe ...></iframe> code
+  6. In index.html, find the comment block:
+       <!-- TODO: Replace the placeholder below with a real Google Maps embed -->
+  7. Delete the <div class="map-placeholder"> block
+  8. Paste your <iframe> code in its place
+  9. Add style="width:100%;height:100%;border:none;" to the iframe tag
+
+
+══════════════════════════════════════════════════════════════════════════════
+SECTION 4 — GOING LIVE (HOSTING)
+══════════════════════════════════════════════════════════════════════════════
+
+  FREE OPTIONS:
+  ─────────────
+  A. GitHub Pages (free, reliable)
+     1. Create a free GitHub account at github.com
+     2. Create a new repository named: yourname.github.io
+     3. Upload all files maintaining the folder structure
+     4. Enable GitHub Pages in repository Settings
+     Your site will be live at: https://yourname.github.io
+
+  B. Netlify (free, drag & drop)
+     1. Go to https://app.netlify.com
+     2. Drag your entire "fountain-of-prayer" folder into the deploy area
+     3. Your site is live immediately at a netlify.app URL
+     4. Optional: connect a custom domain (e.g. fountainofprayer.co.za)
+
+  CUSTOM DOMAIN:
+  ──────────────
+  Once hosted, update index.html:
+    <meta property="og:url" content="https://YOUR_ACTUAL_DOMAIN" />
+
+  IMPORTANT — Run over a local server when testing:
+  ─────────────────────────────────────────────────
+  content.json loads via fetch(), which requires a server.
+  DO NOT just double-click index.html in a file browser — it won't load content.
+
+  Run locally with:
+    npx serve .        (if Node.js is installed)
+  OR
+    python3 -m http.server 8000   (if Python 3 is installed)
+  Then open: http://localhost:8000
+
+
+══════════════════════════════════════════════════════════════════════════════
+SECTION 5 — COMMON CUSTOMISATIONS
+══════════════════════════════════════════════════════════════════════════════
+
+CHANGE COLOURS:
+  Open css/style.css → find ":root {" at the top
+  The key colour variables are:
+    --navy:      #0D1B2A   (dark background)
+    --gold:      #C9963A   (primary accent)
+    --ivory:     #F9F4EC   (light background)
+  Change these hex values to your preferred colours.
+
+CHANGE FONTS:
+  Open css/style.css → find "@import url('https://fonts.googleapis.com..."
+  Visit fonts.google.com to find alternative fonts.
+  Update the import URL and the --font-display / --font-serif / --font-body variables.
+
+ADD A NEW SECTION:
+  1. Add your content to content.json
+  2. Add a <section id="my-section"> block in index.html
+  3. Add data-content="..." attributes to elements that show text
+  4. Add a populate function in content.js to inject the text
+  5. Style the new section in css/style.css
+
+TRANSLATE TO ANOTHER LANGUAGE:
+  All copy is in content.json. Duplicate the file (e.g. content-zu.json for Zulu),
+  translate the values, and swap it in content.js:
+    const response = await fetch('./content-zu.json');
+
+
+══════════════════════════════════════════════════════════════════════════════
+SECTION 6 — QUICK TODO CHECKLIST
+══════════════════════════════════════════════════════════════════════════════
+
+  [ ] Add email address          → content.json → church.email
+  [ ] Confirm Tuesday time       → content.json → services.inPerson[1].time
+  [ ] Add Facebook URL           → content.json → church.facebookUrl
+  [ ] Add logo image             → images/logo.png  (optional)
+  [ ] Add hero photo             → images/hero-photo.jpg
+  [ ] Add about photo            → images/about-ministry.jpg
+  [ ] Add favicon                → images/favicon.ico
+  [ ] Add OG image               → images/og-image.jpg
+  [ ] Embed Google Map           → replace placeholder in index.html
+  [ ] Add Google Review link     → index.html (search ADD_YOUR_GOOGLE_REVIEW_LINK)
+  [ ] Set your domain            → index.html → og:url meta tag
+  [ ] Upload to hosting          → Netlify or GitHub Pages (free)
+
+
+Last updated: June 2025
+──────────────────────────────────────────────────────────────────────────────

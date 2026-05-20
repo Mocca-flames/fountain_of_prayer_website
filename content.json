@@ -1,0 +1,132 @@
+{
+  "church": {
+    "name": "Fountain of Prayer Ministries",
+    "tagline": "A Prophetic Christian Church serving Hammanskraal and surrounding communities.",
+    "leader": "Prophet Prince Thunder",
+    "phone": "082 286 4330",
+    "email": "ADD_YOUR_EMAIL@domain.com",
+    "address": {
+      "street": "Harry Gwala Ave",
+      "suburb": "Kanana",
+      "city": "Hammanskraal",
+      "postalCode": "0407",
+      "full": "Harry Gwala Ave, Kanana, Hammanskraal, 0407"
+    },
+    "googleMapsUrl": "https://maps.google.com/?q=Harry+Gwala+Ave+Kanana+Hammanskraal+0407",
+    "facebookUrl": "https://facebook.com/ADD_YOUR_FACEBOOK_PAGE_HERE",
+    "socialProof": "Over 5,000 people have connected with our ministry!"
+  },
+  "hero": {
+    "headline": "Experience the Holy Spirit. See your life transformed.",
+    "subheadline": "We are in Hammanskraal, Kanana. Prophet Prince Thunder leads us. We offer hope, powerful worship, and prophetic teaching.",
+    "ctaPrimary": {
+      "label": "Join Us This Sunday",
+      "href": "#services"
+    },
+    "ctaSecondary": {
+      "label": "Tune In Live",
+      "href": "#radio"
+    }
+  },
+  "pillars": [
+    {
+      "icon": "flame",
+      "title": "Prayer & Deliverance",
+      "description": "We break chains and restore lives by God's power."
+    },
+    {
+      "icon": "hands",
+      "title": "Divine Healing",
+      "description": "God heals you physically, spiritually, and emotionally."
+    },
+    {
+      "icon": "star",
+      "title": "Breakthrough",
+      "description": "We help you grow financially, personally, and spiritually."
+    }
+  ],
+  "services": {
+    "sectionTitle": "Join Us",
+    "sectionSubtitle": "Come in person or listen on air. You can always meet with God.",
+    "inPerson": {
+      "label": "In-Person Services",
+      "items": [
+        {
+          "day": "Sunday",
+          "name": "Sunday Worship Service",
+          "time": "09:00 AM",
+          "description": "Come for prophetic teaching, praise, and worship."
+        },
+        {
+          "day": "Tuesday",
+          "name": "Miracle & Deliverance Service",
+          "time": "ADD_TUESDAY_START_TIME",
+          "description": "Mid-week prayer and breakthrough."
+        },
+        {
+          "day": "Friday",
+          "name": "Friday Service",
+          "time": "Opens at 5:00 PM",
+          "description": "End your week in God's presence. Doors open at 17:00."
+        }
+      ]
+    },
+    "radio": {
+      "label": "Radio Ministry",
+      "station": "Moretele Community Radio FM 106.6",
+      "intro": "Not in town? Listen on the radio:",
+      "items": [
+        {
+          "day": "Sunday Morning",
+          "time": "08:00 AM",
+          "note": "Get a prophetic word before Sunday service."
+        },
+        {
+          "day": "Thursday Evening",
+          "time": "21:00 PM",
+          "note": "A strong word to end your week."
+        }
+      ]
+    }
+  },
+  "about": {
+    "sectionTitle": "Our Community",
+    "body": "We serve Hammanskraal, Temba, Kudube, Stinkwater, Babelegi, and nearby areas. We build a community of faith, prayer, and God's power.",
+    "communities": [
+      "Hammanskraal",
+      "Temba",
+      "Kudube",
+      "Stinkwater",
+      "Babelegi"
+    ],
+    "leaderStatement": "Prophet Prince Thunder leads us. Here, the supernatural is normal. The broken become whole. We help you walk in your God-given destiny.",
+    "founded": "ADD_FOUNDING_YEAR",
+    "members": "ADD_CONGREGATION_SIZE_OR_REMOVE"
+  },
+  "contact": {
+    "sectionTitle": "Find Us",
+    "sectionSubtitle": "We would love to welcome you. Come as you are.",
+    "reviewCallout": "Over 5,000 people have connected with our ministry!"
+  },
+  "footer": {
+    "copyright": "Fountain of Prayer Ministries. All rights reserved.",
+    "quickLinks": [
+      {
+        "label": "Services",
+        "href": "#services"
+      },
+      {
+        "label": "Radio",
+        "href": "#radio"
+      },
+      {
+        "label": "About",
+        "href": "#about"
+      },
+      {
+        "label": "Contact",
+        "href": "#contact"
+      }
+    ]
+  }
+}
