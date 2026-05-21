@@ -54,13 +54,13 @@
         {
           "day": "Sunday",
           "name": "Sunday Worship Service",
-          "time": "09:00 AM",
+          "time": "11:00 AM",
           "description": "Come for prophetic teaching, praise, and worship."
         },
         {
           "day": "Tuesday",
           "name": "Miracle & Deliverance Service",
-          "time": "ADD_TUESDAY_START_TIME",
+          "time": "11:00 AM",
           "description": "Mid-week prayer and breakthrough."
         },
         {
