@@ -1,7 +1,7 @@
 /**
  * main.js
- * UI behaviour: mobile nav, scroll reveals, sticky header.
- * No copy lives here — all text is in content.json / content.js.
+ * UI behaviour: mobile nav, scroll reveals, sticky header,
+ * hero parallax, dynamic header height, responsive hero background.
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -9,13 +9,16 @@ document.addEventListener('DOMContentLoaded', () => {
   initStickyHeader();
   initScrollReveal();
   initSmoothScroll();
+  initHeroParallax();
+  initHeroBackgroundSwitch();
+  initHeaderHeight();
 });
 
 // ── MOBILE NAV ───────────────────────────────────────────────────────────────
 function initMobileNav() {
-  const toggle   = document.getElementById('nav-toggle');
-  const navMenu  = document.getElementById('nav-menu');
-  const overlay  = document.getElementById('nav-overlay');
+  const toggle  = document.getElementById('nav-toggle');
+  const navMenu = document.getElementById('nav-menu');
+  const overlay = document.getElementById('nav-overlay');
   const navLinks = navMenu ? navMenu.querySelectorAll('.nav-link') : [];
 
   if (!toggle || !navMenu) return;
@@ -37,18 +40,12 @@ function initMobileNav() {
   }
 
   toggle.addEventListener('click', () => {
-    const isOpen = navMenu.classList.contains('is-open');
-    isOpen ? closeNav() : openNav();
+    navMenu.classList.contains('is-open') ? closeNav() : openNav();
   });
 
   overlay && overlay.addEventListener('click', closeNav);
-
   navLinks.forEach(link => link.addEventListener('click', closeNav));
-
-  // Close on Escape
-  document.addEventListener('keydown', e => {
-    if (e.key === 'Escape') closeNav();
-  });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeNav(); });
 }
 
 // ── STICKY HEADER ────────────────────────────────────────────────────────────
@@ -57,26 +54,68 @@ function initStickyHeader() {
   if (!header) return;
 
   let lastScroll = 0;
-  const threshold = 80;
+  const threshold = 60;
 
   window.addEventListener('scroll', () => {
     const current = window.scrollY;
 
-    if (current > threshold) {
-      header.classList.add('is-scrolled');
-    } else {
-      header.classList.remove('is-scrolled');
-    }
+    header.classList.toggle('is-scrolled', current > threshold);
 
-    // Hide on scroll down, show on scroll up (mobile UX)
     if (current > lastScroll && current > 200) {
       header.classList.add('is-hidden');
     } else {
       header.classList.remove('is-hidden');
     }
-
     lastScroll = current <= 0 ? 0 : current;
   }, { passive: true });
+}
+
+// ── HEADER HEIGHT — keep --header-h variable in sync on resize ────────────────
+function initHeaderHeight() {
+  const header = document.getElementById('site-header');
+  function update() {
+    document.documentElement.style.setProperty('--header-h', `${header.offsetHeight}px`);
+  }
+  update();
+  window.addEventListener('resize', update, { passive: true });
+}
+
+// ── HERO PARALLAX — gentle scale + backdrop tilt on scroll ───────────────────
+function initHeroParallax() {
+  const hero = document.getElementById('hero');
+  if (!hero) return;
+
+  // Scale the hero background layers slightly as user scrolls
+  window.addEventListener('scroll', () => {
+    const scrolled = window.scrollY;
+    const heroH    = hero.offsetHeight;
+    if (scrolled > heroH) return;
+
+    const progress = scrolled / heroH;          // 0 → 1 while hero is in view
+    const scale    = 1 + progress * 0.04;       // 1 → 1.04
+    const translateY = progress * 60;           // image drifts down slightly
+
+    hero.querySelectorAll('.hero-bg').forEach(bg => {
+      bg.style.transform = `scale(${scale}) translateY(${translateY}px)`;
+    });
+  }, { passive: true });
+}
+
+// ── HERO BACKGROUND SWITCH — show desktop image above 900px, mobile below ─────
+function initHeroBackgroundSwitch() {
+  const desktopBg = document.querySelector('.hero-bg--desktop');
+  const mobileBg  = document.querySelector('.hero-bg--mobile');
+
+  if (!desktopBg || !mobileBg) return;
+
+  function updateBg() {
+    const isDesktop = window.innerWidth >= 900;
+    desktopBg.style.display = isDesktop ? 'block' : 'none';
+    mobileBg.style.display  = isDesktop ? 'none'  : 'block';
+  }
+
+  updateBg();
+  window.addEventListener('resize', updateBg, { passive: true });
 }
 
 // ── SCROLL REVEAL ─────────────────────────────────────────────────────────────
@@ -93,7 +132,7 @@ function initScrollReveal() {
         }
       });
     },
-    { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }
+    { threshold: 0.10, rootMargin: '0px 0px -50px 0px' }
   );
 
   targets.forEach(el => observer.observe(el));
@@ -108,8 +147,8 @@ function initSmoothScroll() {
       if (!target) return;
 
       e.preventDefault();
-      const headerH = document.getElementById('site-header')?.offsetHeight || 70;
-      const top = target.getBoundingClientRect().top + window.scrollY - headerH - 8;
+      const headerH = document.getElementById('site-header')?.offsetHeight || 64;
+      const top = target.getBoundingClientRect().top + window.scrollY - headerH - 12;
 
       window.scrollTo({ top, behavior: 'smooth' });
     });

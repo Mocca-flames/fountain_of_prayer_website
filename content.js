@@ -32,6 +32,11 @@ function populatePage(d) {
   setAttr('[data-content="hero-cta-secondary"]', 'href',  d.hero.ctaSecondary.href);
   setText('[data-content="hero-cta-secondary"]', d.hero.ctaSecondary.label);
 
+  // ── ENCOUNTER ───────────────────────────────────────────────────────────────
+  setText('[data-content="encounter-label"]', d.encounter.label);
+  setHTML('[data-content="encounter-title"]', d.encounter.title);
+  setHTML('[data-content="encounter-body"]',  d.encounter.body);
+
   // ── PILLARS ────────────────────────────────────────────────────────────────
   const pillarsContainer = document.querySelector('[data-content="pillars-list"]');
   if (pillarsContainer) {
@@ -83,16 +88,31 @@ function populatePage(d) {
     `).join('');
   }
 
+  // ── TESTIMONIES HEADER ─────────────────────────────────────────────────────
+  if (d.testimonies) {
+    setText('[data-content="testimonies-title"]',    d.testimonies.sectionTitle || 'Lives Changed');
+    setText('[data-content="testimonies-subtitle"]', d.testimonies.sectionSubtitle || 'God is moving.');
+  }
+
   // ── ABOUT ──────────────────────────────────────────────────────────────────
-  setText('[data-content="about-title"]',   d.about.sectionTitle);
-  setHTML('[data-content="about-body"]',    d.about.body);
-  setText('[data-content="leader-statement"]', d.about.leaderStatement);
+  setText('[data-content="about-title"]',       d.about.sectionTitle);
+  setHTML('[data-content="about-body"]',        d.about.body);
+  setHTML('[data-content="leader-statement"]',  d.about.leaderStatement);
 
   const communitiesEl = document.querySelector('[data-content="communities-list"]');
   if (communitiesEl) {
     communitiesEl.innerHTML = d.about.communities
       .map(c => `<span class="community-tag">${c}</span>`)
       .join('');
+  }
+
+  // ── FINAL CTA ──────────────────────────────────────────────────────────────
+  if (d.finalCta) {
+    setText('[data-content="cta-label"]',      d.finalCta.label);
+    setHTML('[data-content="cta-title"]',      d.finalCta.title);
+    setText('[data-content="cta-subtitle"]',   d.finalCta.subtitle);
+    setText('[data-content="cta-primary"]',   d.finalCta.primaryLabel);
+    setText('[data-content="cta-secondary"]', d.finalCta.secondaryLabel);
   }
 
   // ── CONTACT ────────────────────────────────────────────────────────────────
@@ -109,6 +129,20 @@ function populatePage(d) {
   if (emailLink) {
     emailLink.href = `mailto:${d.church.email}`;
     emailLink.textContent = d.church.email;
+  }
+
+  // WhatsApp links (contact card + footer)
+  if (d.church.whatsAppUrl) {
+    const waContact = document.querySelector('[data-content="contact-whatsapp-link"]');
+    if (waContact) {
+      waContact.href = d.church.whatsAppUrl;
+      waContact.textContent = 'Message us on WhatsApp';
+    }
+    const waFooter = document.querySelector('[data-content="footer-whatsapp-link"]');
+    if (waFooter) {
+      waFooter.href = d.church.whatsAppUrl;
+      waFooter.textContent = 'WhatsApp';
+    }
   }
 
   setText('[data-content="review-callout"]', d.contact.reviewCallout);

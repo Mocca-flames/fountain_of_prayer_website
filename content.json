@@ -14,19 +14,25 @@
     },
     "googleMapsUrl": "https://maps.google.com/?q=Harry+Gwala+Ave+Kanana+Hammanskraal+0407",
     "facebookUrl": "https://www.facebook.com/prince.thunder.338",
+    "whatsAppUrl": "https://wa.me/27822864330",
     "socialProof": "Over 5,000 people have connected with our ministry!"
   },
   "hero": {
-    "headline": "Experience the Holy Spirit. See your life transformed.",
-    "subheadline": "We are in Hammanskraal, Kanana. Prophet Prince Thunder leads us. We offer hope, powerful worship, and prophetic teaching.",
+    "headline": "REVIVAL IS HERE",
+    "subheadline": "A church burning with faith, power, worship, and transformation.",
     "ctaPrimary": {
       "label": "Join Us This Sunday",
       "href": "#services"
     },
     "ctaSecondary": {
-      "label": "Tune In Live",
-      "href": "#radio"
+      "label": "📍 Find Us",
+      "href": "https://maps.google.com/?q=Harry+Gwala+Ave+Kanana+Hammanskraal+0407"
     }
+  },
+  "encounter": {
+    "label": "Our Vision",
+    "title": "Encounter God",
+    "body": "A generation on fire for God — revival, truth, and transformation. When you step into this house, the supernatural becomes normal and your life is forever changed by the presence of Jesus Christ."
   },
   "pillars": [
     {
@@ -55,26 +61,38 @@
           "day": "Sunday",
           "name": "Sunday Worship Service",
           "time": "11:00 AM",
-          "description": "Come for prophetic teaching, praise, and worship."
+          "description": "Prophetic teaching, praise, and worship."
         },
         {
-          "day": "Tuesday",
-          "name": "Miracle & Deliverance Service",
+          "day": "Midweek Prayer",
+          "name": "Miracle & Deliverance",
           "time": "11:00 AM",
-          "description": "Mid-week prayer and breakthrough."
+          "description": "Mid-week prayer and breakthrough moment."
+        },
+        {
+          "day": "Youth Ministry",
+          "name": "Youth & Young Adults",
+          "time": "Sundays 5:00 PM",
+          "description": "A generation on fire for God."
         },
         {
           "day": "Friday",
-          "name": "Friday Service",
-          "time": "Opens at 5:00 PM",
-          "description": "End your week in God's presence. Doors open at 17:00."
+          "name": "Deliverance & Healing Night",
+          "time": "Opens 5:00 PM",
+          "description": "A powerful night of prayer, healing, and deliverance."
+        },
+        {
+          "day": "Worship Nights",
+          "name": "Evening Worship Experience",
+          "time": "7:00 PM",
+          "description": "Extended worship, prophetic ministry, and encounter."
         }
       ]
     },
     "radio": {
       "label": "Radio Ministry",
       "station": "Moretele Community Radio FM 106.6",
-      "intro": "Not in town? Listen on the radio:",
+      "intro": "Can't make it in person? Tune in to our weekly broadcasts:",
       "items": [
         {
           "day": "Sunday Morning",
@@ -89,9 +107,13 @@
       ]
     }
   },
+  "testimonies": {
+    "sectionTitle": "Lives Changed",
+    "sectionSubtitle": "God is moving. These are moments you can feel."
+  },
   "about": {
-    "sectionTitle": "Our Community",
-    "body": "We serve Hammanskraal, Temba, Kudube, Stinkwater, Babelegi, and nearby areas. We build a community of faith, prayer, and God's power.",
+    "sectionTitle": "Prophet Prince Thunder",
+    "body": "Prophet Prince Thunder leads Fountain of Prayer Ministries with a fire that cannot be contained. Under his leadership, this church has become a beacon of hope, deliverance, and supernatural transformation for Hammanskraal, Temba, Kudube, Stinkwater, and Babelegi.",
     "communities": [
       "Hammanskraal",
       "Temba",
@@ -99,9 +121,16 @@
       "Stinkwater",
       "Babelegi"
     ],
-    "leaderStatement": "Prophet Prince Thunder leads us. Here, the supernatural is normal. The broken become whole. We help you walk in your God-given destiny.",
+    "leaderStatement": "Here, the supernatural is normal. The broken become whole. We help you walk in your God-given destiny.",
     "founded": "ADD_FOUNDING_YEAR",
     "members": "ADD_CONGREGATION_SIZE_OR_REMOVE"
+  },
+  "finalCta": {
+    "label": "Your Journey Starts Now",
+    "title": "Your life can change<br/>in one encounter.",
+    "subtitle": "Come as you are. Leave transformed. Join us this Sunday.",
+    "primaryLabel": "Join This Sunday",
+    "secondaryLabel": "📍 Get Directions"
   },
   "contact": {
     "sectionTitle": "Find Us",
@@ -112,6 +141,10 @@
     "copyright": "Fountain of Prayer Ministries. All rights reserved.",
     "quickLinks": [
       {
+        "label": "Encounter",
+        "href": "#encounter"
+      },
+      {
         "label": "Services",
         "href": "#services"
       },
@@ -120,11 +153,15 @@
         "href": "#radio"
       },
       {
-        "label": "About",
+        "label": "Pastor",
         "href": "#about"
       },
       {
-        "label": "Contact",
+        "label": "Stories",
+        "href": "#testimonies"
+      },
+      {
+        "label": "Visit",
         "href": "#contact"
       }
     ]

@@ -21,34 +21,34 @@
   <title>Fountain of Prayer Ministries – Hammanskraal</title>
 
   <!-- Favicon — see INSTRUCTIONS.txt -->
-  <!-- <link rel="icon" href="./images/favicon.ico" /> -->
+  <link rel="icon" href="favicon.ico" />
 
-  <link rel="stylesheet" href="/style.css" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
 
   <!-- ═══════════════════════════════════════════════════
-     HEADER
-════════════════════════════════════════════════════ -->
+       HEADER
+  ════════════════════════════════════════════════════ -->
   <header id="site-header" role="banner">
     <div class="container">
       <div class="header-inner">
 
         <!-- Logo / Name -->
         <a href="#hero" class="header-logo" aria-label="Fountain of Prayer Ministries — Home">
-          <!-- TODO: Replace text logo with your actual logo image — see INSTRUCTIONS.txt -->
-          <span class="header-logo__name" data-content="church-name">Fountain of Prayer Ministries</span>
-          <span class="header-logo__sub">Hammanskraal · Kanana</span>
+          <img src="logo.png" class="header-logo__img" alt="Fountain of Prayer Ministries" />
         </a>
 
         <!-- Desktop Navigation (injected into #nav-menu on desktop) -->
         <nav class="header-nav" aria-label="Main navigation">
           <div id="nav-menu" role="dialog" aria-label="Navigation menu">
+            <a href="#encounter" class="nav-link">Encounter</a>
             <a href="#services" class="nav-link">Services</a>
             <a href="#radio" class="nav-link">Radio</a>
-            <a href="#about" class="nav-link">About</a>
-            <a href="#contact" class="nav-link">Contact</a>
+            <a href="#about" class="nav-link">Pastor</a>
+            <a href="#testimonies" class="nav-link">Stories</a>
+            <a href="#contact" class="nav-link">Visit</a>
 
             <!-- Shown only inside mobile drawer -->
             <div class="nav-menu-actions">
@@ -69,7 +69,7 @@
             📞 082 286 4330
           </a>
           <a href="https://maps.google.com/?q=Harry+Gwala+Ave+Kanana+Hammanskraal+0407" target="_blank"
-            rel="noopener noreferrer" class="btn btn--outline-gold" data-content="btn-maps">
+            rel="noopener noreferrer" class="btn btn--outline-gold btn-maps-header" data-content="btn-maps">
             📍 Maps
           </a>
 
@@ -91,51 +91,46 @@
 
 
   <!-- ═══════════════════════════════════════════════════
-     HERO
-════════════════════════════════════════════════════ -->
+       HERO — CINEMATIC
+  ════════════════════════════════════════════════════ -->
   <section id="hero" aria-labelledby="hero-headline">
+    <!-- Desktop background image -->
+    <img src="landing.png" class="hero-bg hero-bg--desktop" alt="" aria-hidden="true" loading="eager" />
+
+    <!-- Mobile background image -->
+    <img src="landing_mobile.png" class="hero-bg hero-bg--mobile" alt="" aria-hidden="true" loading="eager" />
+
+    <!-- Gradient overlay: dark left, soft to right for text contrast -->
+    <div class="hero-overlay" aria-hidden="true"></div>
+
     <div class="container">
       <div class="hero-inner">
-        <div class="hero-inner-grid">
 
-          <!-- Left: text -->
-          <div class="hero-text">
-            <div class="hero-badge" aria-hidden="true">
-              <span class="hero-badge__dot"></span>
-              <span class="hero-badge__text">Live · Prophetic · Transforming</span>
-            </div>
-
-            <h1 id="hero-headline" class="hero-headline" data-content="hero-headline">
-              Experience a Prophetic Atmosphere Where Lives Are Transformed by the Holy Spirit.
-            </h1>
-
-            <p class="hero-subheadline" data-content="hero-subheadline">
-              Welcome to Fountain of Prayer Ministries, located in Hammanskraal, Kanana.
-              Led by Prophet Prince Thunder, our ministry is a beacon of hope, powerful worship,
-              and prophetic teaching.
-            </p>
-
-            <div class="hero-cta-group">
-              <a href="#services" class="btn btn--gold" data-content="hero-cta-primary">
-                Join Us This Sunday
-              </a>
-              <a href="#radio" class="btn btn--outline-ivory" data-content="hero-cta-secondary">
-                📻 Tune In Live
-              </a>
-            </div>
-          </div>
-
-          <!-- Right: image (desktop only) — swap in a real photo -->
-          <div class="hero-image-wrap">
-            <!-- TODO: Add a photo of your church/congregation/Prophet Prince Thunder
-               Recommended: 800×1000px portrait, bright & impactful.
-               See INSTRUCTIONS.txt. -->
-            <!-- <img src="./images/hero-photo.jpg"
-               alt="Congregation worshipping at Fountain of Prayer Ministries"
-               loading="eager" /> -->
-          </div>
-
+        <!-- Badge -->
+        <div class="hero-badge" aria-hidden="true">
+          <span class="hero-badge__dot"></span>
+          <span class="hero-badge__text">Live · Prophetic · Transforming</span>
         </div>
+
+        <h1 id="hero-headline" class="hero-headline" data-content="hero-headline">
+          REVIVAL IS HERE
+        </h1>
+
+        <p class="hero-subheadline" data-content="hero-subheadline">
+          A church burning with faith, power, worship, and transformation.
+        </p>
+
+        <div class="hero-cta-group">
+          <a href="#services" class="btn btn--gold btn--xl" data-content="hero-cta-primary">
+            Join Us This Sunday
+          </a>
+          <a href="https://maps.google.com/?q=Harry+Gwala+Ave+Kanana+Hammanskraal+0407" target="_blank"
+            rel="noopener noreferrer" class="btn btn--outline-ivory btn--xl"
+            data-content="hero-cta-secondary">
+            📍 Find Us
+          </a>
+        </div>
+
       </div>
     </div>
 
@@ -147,20 +142,25 @@
 
 
   <!-- ═══════════════════════════════════════════════════
-     PILLARS / CORE VALUES
-════════════════════════════════════════════════════ -->
-  <section id="pillars" aria-labelledby="pillars-heading">
+       ENCOUNTER GOD — VISION SECTION
+  ════════════════════════════════════════════════════ -->
+  <section id="encounter" aria-labelledby="encounter-heading">
     <div class="container">
 
-      <div class="pillars-header reveal">
-        <span class="section-label">What We Stand For</span>
-        <h2 id="pillars-heading" class="section-title">Built on Three Foundations</h2>
-        <div class="gold-rule"></div>
-      </div>
+      <div class="encounter-inner reveal">
 
-      <!-- Pillar cards injected by content.js -->
-      <div class="pillars-grid" data-content="pillars-list" aria-live="polite">
-        <!-- Populated by content.js -->
+        <span class="section-label section-label--center" data-content="encounter-label">Our Vision</span>
+
+        <h2 id="encounter-heading" class="encounter-heading" data-content="encounter-title">
+          Encounter God
+        </h2>
+
+        <blockquote class="encounter-quote" data-content="encounter-body">
+          A generation on fire for God — revival, truth, and transformation.
+          When you step into this house, the supernatural becomes normal
+          and your life is forever changed by the presence of Jesus Christ.
+        </blockquote>
+
       </div>
 
     </div>
@@ -168,8 +168,8 @@
 
 
   <!-- ═══════════════════════════════════════════════════
-     SERVICES & RADIO
-════════════════════════════════════════════════════ -->
+       SERVICES
+  ════════════════════════════════════════════════════ -->
   <section id="services" aria-labelledby="services-heading">
     <div class="container">
 
@@ -182,18 +182,8 @@
         </p>
       </div>
 
-      <!-- In-person services -->
-      <div class="services-block reveal reveal--delay-1">
-        <div class="services-block__label">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-            aria-hidden="true">
-            <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" />
-            <polyline points="9 22 9 12 15 12 15 22" />
-          </svg>
-          In-Person Services
-        </div>
-
-        <!-- Cards injected by content.js -->
+      <!-- In-person services — dynamic -->
+      <div class="service-cards-wrapper reveal">
         <div class="service-cards-grid" data-content="inperson-list">
           <!-- Populated by content.js -->
         </div>
@@ -235,65 +225,160 @@
 
 
   <!-- ═══════════════════════════════════════════════════
-     ABOUT
-════════════════════════════════════════════════════ -->
-  <section id="about" aria-labelledby="about-heading">
+       TESTIMONIES GALLERY
+  ════════════════════════════════════════════════════ -->
+  <section id="testimonies" aria-labelledby="testimonies-heading">
     <div class="container">
-      <div class="about-layout">
 
-        <!-- Image -->
-        <div class="about-image-wrap reveal">
-          <!-- TODO: Add a community/ministry photo here.
-             Recommended: 800×600px landscape.
-             See INSTRUCTIONS.txt -->
-          <div class="about-image-placeholder">
-            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"
-              aria-hidden="true">
-              <rect x="3" y="3" width="18" height="18" rx="2" />
-              <circle cx="8.5" cy="8.5" r="1.5" />
-              <polyline points="21 15 16 10 5 21" />
-            </svg>
-            <p>MINISTRY PHOTO</p>
-          </div>
-          <!-- <img src="./images/about-ministry.jpg"
-             alt="Fountain of Prayer Ministries community in Hammanskraal"
-             loading="lazy" /> -->
-        </div>
-
-        <!-- Text -->
-        <div class="about-text">
-          <div class="reveal">
-            <span class="section-label">Our Mission</span>
-            <h2 id="about-heading" class="section-title" data-content="about-title">Our Community</h2>
-            <div class="gold-rule"></div>
-          </div>
-
-          <p class="about-body-text reveal reveal--delay-1" data-content="about-body">
-            We are dedicated to serving Hammanskraal, Temba, Kudube, Stinkwater, Babelegi,
-            and surrounding areas.
-          </p>
-
-          <blockquote class="about-leader-quote reveal reveal--delay-2" data-content="leader-statement">
-            Under the leadership of Prophet Prince Thunder, Fountain of Prayer Ministries stands
-            as a place where the supernatural is normal.
-          </blockquote>
-
-          <div class="communities-wrap reveal reveal--delay-3">
-            <span class="communities-label">Communities We Serve</span>
-            <div class="communities-tags" data-content="communities-list">
-              <!-- Populated by content.js -->
-            </div>
-          </div>
-        </div>
-
+      <div class="testimonies-header reveal">
+        <span class="section-label section-label--center">Revival Moments</span>
+        <h2 id="testimonies-heading" class="section-title" data-content="testimonies-title">
+          Lives Changed
+        </h2>
+        <div class="gold-rule gold-rule--center"></div>
+        <p class="section-subtitle" data-content="testimonies-subtitle">
+          God is moving. These are moments you can feel.
+        </p>
       </div>
+
+      <!-- Vision / About Pastor (split layout) -->
+      <section id="about" aria-labelledby="about-heading">
+        <div class="container">
+          <div class="about-layout">
+
+            <!-- Image — replace with your pastor portrait -->
+            <div class="about-image-wrap reveal">
+              <!--
+              <img src="images/pastor-portrait.jpg"
+                alt="Prophet Prince Thunder"
+                loading="lazy" />
+              -->
+              <div class="about-image-placeholder">
+                <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"
+                  aria-hidden="true">
+                  <circle cx="12" cy="7" r="4" />
+                  <path d="M4 21v-2a4 4 0 014-4h8a4 4 0 014 4v2" />
+                </svg>
+                <p>PASTOR PORTRAIT</p>
+                <span>Replace with your image</span>
+              </div>
+            </div>
+
+            <!-- Text -->
+            <div class="about-text">
+              <div class="reveal">
+                <span class="section-label">About The Pastor</span>
+                <h2 id="about-heading" class="section-title" data-content="about-title">Prophet Prince Thunder</h2>
+                <div class="gold-rule"></div>
+              </div>
+
+              <p class="about-body-text reveal reveal--delay-1" data-content="about-body">
+                Prophet Prince Thunder leads Fountain of Prayer Ministries with a fire that cannot be contained.
+                Under his leadership, this church has become a beacon of hope, deliverance, and supernatural
+                transformation for Hammanskraal, Temba, Kudube, Stinkwater, and Babelegi.
+              </p>
+
+              <blockquote class="about-leader-quote reveal reveal--delay-2" data-content="leader-statement">
+                "Here, the supernatural is normal. The broken become whole. We help you walk in your God-given destiny."
+              </blockquote>
+
+              <div class="communities-wrap reveal reveal--delay-3">
+                <span class="communities-label">Communities We Serve</span>
+                <div class="communities-tags" data-content="communities-list">
+                  <!-- Populated by content.js -->
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- Gallery grid (masonry feel) — static HTML images can be dropped in -->
+      <div class="testimonies-grid reveal" data-content="testimonies-gallery">
+        <!--
+          Replace each .gallery-item's <div> with an <img> tag:
+          <img src="images/gallery-1.jpg" alt="Worship at Fountain of Prayer" loading="lazy" />
+          Do not forget to set a fixed height or use aspect-ratio on .gallery-item.
+          Grid layouts: 5 patterns — 1 tall, 3 small, 1 wide.
+        -->
+        <div class="gallery-item gallery-item--tall">
+          <div class="gallery-item__inner" aria-label="Worship Night"></div>
+        </div>
+        <div class="gallery-item gallery-item--square">
+          <div class="gallery-item__inner" aria-label="Prayer Moment"></div>
+        </div>
+        <div class="gallery-item gallery-item--wide">
+          <div class="gallery-item__inner" aria-label=" congregation Praise"></div>
+        </div>
+        <div class="gallery-item gallery-item--square">
+          <div class="gallery-item__inner" aria-label="Prophetic Service"></div>
+        </div>
+        <div class="gallery-item gallery-item--tall">
+          <div class="gallery-item__inner" aria-label="Deliverance Night"></div>
+        </div>
+        <div class="gallery-item gallery-item--square">
+          <div class="gallery-item__inner" aria-label="Sunday Gathering"></div>
+        </div>
+        <div class="gallery-item gallery-item--wide">
+          <div class="gallery-item__inner" aria-label="Youth Ministry"></div>
+        </div>
+        <div class="gallery-item gallery-item--tall">
+          <div class="gallery-item__inner" aria-label="Baptism Service"></div>
+        </div>
+        <div class="gallery-item gallery-item--square">
+          <div class="gallery-item__inner" aria-label="Community Gathering"></div>
+        </div>
+        <div class="gallery-item gallery-item--wide">
+          <div class="gallery-item__inner" aria-label="Worship Band"></div>
+        </div>
+      </div>
+
     </div>
   </section>
 
 
   <!-- ═══════════════════════════════════════════════════
-     CONTACT / FIND US
-════════════════════════════════════════════════════ -->
+       FINAL CTA
+  ════════════════════════════════════════════════════ -->
+  <section id="final-cta" aria-labelledby="cta-heading">
+    <div class="container">
+
+      <div class="cta-inner reveal">
+
+        <!-- Decorative glow orb -->
+        <div class="cta-glow" aria-hidden="true"></div>
+
+        <span class="section-label section-label--center" data-content="cta-label">Your Journey Starts Now</span>
+
+        <h2 id="cta-heading" class="cta-heading" data-content="cta-title">
+          Your life can change<br/>in one encounter.
+        </h2>
+
+        <p class="cta-sub" data-content="cta-subtitle">
+          Come as you are. Leave transformed. Join us this Sunday.
+        </p>
+
+        <div class="cta-buttons">
+          <a href="#services" class="btn btn--gold btn--xl btn--cta" data-content="cta-primary">
+            Join This Sunday
+          </a>
+          <a href="https://maps.google.com/?q=Harry+Gwala+Ave+Kanana+Hammanskraal+0407" target="_blank"
+            rel="noopener noreferrer" class="btn btn--outline-gold btn--xl btn--cta"
+            data-content="cta-secondary">
+            📍 Get Directions
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════
+       CONTACT / FIND US
+  ════════════════════════════════════════════════════ -->
   <section id="contact" aria-labelledby="contact-heading">
     <div class="container">
 
@@ -309,15 +394,7 @@
       <div class="contact-layout">
 
         <!-- Map -->
-        <div class="contact-map reveal">
-          <!--
-          TODO: Replace the placeholder below with a real Google Maps embed.
-          1. Go to maps.google.com
-          2. Search: Harry Gwala Ave, Kanana, Hammanskraal, 0407
-          3. Click Share → Embed a map → Copy HTML
-          4. Paste the <iframe> here and delete the .map-placeholder div.
-          See INSTRUCTIONS.txt for details.
-        -->
+        <div class="contact-map reveal reveal--delay-1">
           <div class="map-placeholder">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d12330.059268792704!2d28.249004148650084!3d-25.410117116086685!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e6!4m5!1s0x1ebfc166fdbad3b7%3A0x255445a7a32e7ef!2sFountain%20of%20Prayer%20Ministries%2C%20Harry%20Gwala%20Ave%2C%20Kanana%2C%20Hammanskraal%2C%200407!3m2!1d-25.407573499999998!2d28.245244!4m5!1s0x1ebfc166fdbad3b7%3A0x255445a7a32e7ef!2sFountain%20of%20Prayer%20Ministries%2C%20Harry%20Gwala%20Ave%2C%20Kanana%2C%20Hammanskraal%2C%200407!3m2!1d-25.407573499999998!2d28.245244!5e1!3m2!1sen!2sza!4v1779278440301!5m2!1sen!2sza"
@@ -329,7 +406,7 @@
         </div>
 
         <!-- Contact info card -->
-        <div class="contact-info-card reveal reveal--delay-1">
+        <div class="contact-info-card reveal reveal--delay-2">
 
           <div class="contact-info-item">
             <div class="contact-info-icon" aria-hidden="true">📍</div>
@@ -360,7 +437,6 @@
             <div>
               <div class="contact-info-label">Email</div>
               <div class="contact-info-value">
-                <!-- TODO: Add your email address in content.json → church.email -->
                 <a href="mailto:" data-content="contact-email-link">Add in content.json</a>
               </div>
             </div>
@@ -374,6 +450,19 @@
             </div>
           </div>
 
+          <div class="contact-info-item">
+            <div class="contact-info-icon" aria-hidden="true">💬</div>
+            <div>
+              <div class="contact-info-label">WhatsApp</div>
+              <div class="contact-info-value">
+                <a href="https://wa.me/27822864330" target="_blank" rel="noopener noreferrer"
+                  data-content="contact-whatsapp-link">
+                  Message us on WhatsApp
+                </a>
+              </div>
+            </div>
+          </div>
+
         </div>
 
       </div>
@@ -382,14 +471,12 @@
       <div class="review-callout reveal">
         <div class="review-callout__stars" aria-label="5 stars">★★★★★</div>
         <p class="review-callout__text" data-content="review-callout">
-          Join over 5,000+ people who have interacted with our ministry!
+          Over 5,000+ people have interacted with our ministry!
         </p>
         <a href="https://g.page/r/ADD_YOUR_GOOGLE_REVIEW_LINK" target="_blank" rel="noopener noreferrer"
           class="btn btn--gold">
           Leave a Google Review
         </a>
-        <!-- TODO: Replace href above with your real Google Business review link.
-           See INSTRUCTIONS.txt -->
       </div>
 
     </div>
@@ -397,8 +484,8 @@
 
 
   <!-- ═══════════════════════════════════════════════════
-     FOOTER
-════════════════════════════════════════════════════ -->
+       FOOTER
+  ════════════════════════════════════════════════════ -->
   <footer id="site-footer" role="contentinfo">
     <div class="container">
 
@@ -430,6 +517,10 @@
                 <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" />
               </svg>
               Facebook
+            </a>
+            <a href="https://wa.me/27822864330" target="_blank" rel="noopener noreferrer"
+              class="social-btn" data-content="footer-whatsapp-link" aria-label="WhatsApp">
+              💬 WhatsApp
             </a>
             <a href="tel:0822864330" class="social-btn" data-content="footer-phone-link" aria-label="Call us">
               📞 Call Us
